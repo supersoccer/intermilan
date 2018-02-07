@@ -1,0 +1,219 @@
+{
+  "jsonapi": {
+    "version": "1.0"
+  },
+  "data": [
+    {
+      "type": "intermilan-head",
+      "id": "1",
+      "attributes": {
+        "title": "Replay",
+        "leagueName": "Serie A",
+        "clubNameHome": "Inter milan",
+        "clubNameAway": "Udinese",
+        "matchScoreHome": 1,
+        "matchScoreAway": 3,
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-head",
+      "id": "2",
+      "attributes": {
+        "title": "Replay",
+        "leagueName": "Serie A",
+        "clubNameHome": "Inter milan",
+        "clubNameAway": "Udinese",
+        "matchScoreHome": 1,
+        "matchScoreAway": 3,
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-head",
+      "id": "3",
+      "attributes": {
+        "title": "Replay",
+        "leagueName": "Serie A",
+        "clubNameHome": "Inter milan",
+        "clubNameAway": "Udinese",
+        "matchScoreHome": 1,
+        "matchScoreAway": 3,
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-body",
+      "id": "4",
+      "attributes": {
+        "title": "Official Partner Page",
+        "description": "Ikuti semua update terbaru dari Inter Milan mulai dari jadwal, siaran ulang pertandingan sampai wawancara bersama pemain-pemain Inter Milan!"
+      }
+    },
+    {
+      "type": "intermilan-body",
+      "id": "5",
+      "attributes": {
+        "name": "Highlights",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "recordStatus": "Highlights",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-body",
+      "id": "6",
+      "attributes": {
+        "name": "Highlights",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "recordStatus": "Highlights",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-body",
+      "id": "7",
+      "attributes": {
+        "name": "Highlights",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "recordStatus": "Highlights",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-body",
+      "id": "8",
+      "attributes": {
+        "name": "Highlights",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "recordStatus": "Highlights",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-week",
+      "id": "9",
+      "attributes": {
+        "title": "Live This Week",
+        "logoHome": "https://",
+        "clubHome": "Inter",
+        "logoAway": "https://",
+        "clubAway": "Roma",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-season",
+      "id": "10",
+      "attributes": {
+        "title": "Schedule This Season",
+        "year": 2018,
+        "month": "February",
+        "recordStatus": "Highlights",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-date",
+      "id": "11",
+      "attributes": {
+        "dateday": "Sunday 4",
+        "videoUrl": "https://",
+        "clubHome": "Inter",
+        "clubAway": "Crotone",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-date",
+      "id": "12",
+      "attributes": {
+        "dateday": "Sunday 4",
+        "videoUrl": "https://",
+        "clubHome": "Inter",
+        "clubAway": "Crotone",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-date",
+      "id": "13",
+      "attributes": {
+        "dateday": "Sunday 4",
+        "videoUrl": "https://",
+        "clubHome": "Inter",
+        "clubAway": "Crotone",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-date",
+      "id": "14",
+      "attributes": {
+        "dateday": "Sunday 4",
+        "videoUrl": "https://",
+        "clubHome": "Inter",
+        "clubAway": "Crotone",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-live-date",
+      "id": "15",
+      "attributes": {
+        "dateday": "Sunday 4",
+        "videoUrl": "https://",
+        "clubHome": "Inter",
+        "clubAway": "Crotone",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-interviews",
+      "id": "16",
+      "attributes": {
+        "title": "Interview: Matrix Impact",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-interviews",
+      "id": "17",
+      "attributes": {
+        "title": "Interview: Matrix Impact",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-interviews",
+      "id": "18",
+      "attributes": {
+        "title": "Interview: Matrix Impact",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    },
+    {
+      "type": "intermilan-interviews",
+      "id": "19",
+      "attributes": {
+        "title": "Interview: Matrix Impact",
+        "videoUrl": "https://",
+        "imageUrl": "https://",
+        "enabled": true
+      }
+    }
+  ]
+}

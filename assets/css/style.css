@@ -558,7 +558,7 @@ a, a:hover {
   z-index: 2;
 }
 
-.micro-video-container.official, 
+.micro-video-container.official,
 .micro-video-container.interviews {
   width: 100%;
   height: auto;
@@ -570,7 +570,7 @@ a, a:hover {
   position: relative;
 }
 
-.micro-video-container.official .thumbOverlay, 
+.micro-video-container.official .thumbOverlay,
 .micro-video-container.interviews .thumbOverlay {
   width: 100%;
   height: 100%;
@@ -735,7 +735,7 @@ a, a:hover {
   color: #0066aa;
 }
 
-.welcome-message p {  
+.welcome-message p {
   letter-spacing: 0.5px;
   font-size: 12px;
   font-weight: 400;
@@ -777,7 +777,7 @@ a, a:hover {
   margin: 15px auto;
 }
 
-.live-now .versusSym > div:before, 
+.live-now .versusSym > div:before,
 .live-now .versusSym > div:after {
   content: '';
   width: 30px;
@@ -813,6 +813,8 @@ a, a:hover {
 .scheduledBox {
   padding: 30px 10px;
   margin-top: -30px;
+  margin-left: -580px;
+  margin-right: -580px;
   margin-bottom: 30px;
   background-color: #0066aa;
   color: #fff;
@@ -826,12 +828,12 @@ a, a:hover {
   letter-spacing: 2px
 }
 
-.scheduledBox .month, 
+.scheduledBox .month,
 .scheduledBox .year {
   text-align: center;
 }
 
-.scheduledBox .arrow, 
+.scheduledBox .arrow,
 .scheduledBox .monthContent {
   display: inline-block;
 }
@@ -864,7 +866,7 @@ a, a:hover {
   text-align: center;
 }
 
-.scheduledBox .datedaytime .dateday, 
+.scheduledBox .datedaytime .dateday,
 .scheduledBox .datedaytime .time {
   display: inline-block;
 }
@@ -938,7 +940,7 @@ a, a:hover {
   .scheduledBox .date {
     text-align: center;
   }
-  .scheduledBox .datedaytime, 
+  .scheduledBox .datedaytime,
   .scheduledBox .clubName {
     display: inline-block;
   }
@@ -956,7 +958,7 @@ a, a:hover {
 }
 
 @media screen and (max-width: 1023px) {
-  .live-now .clubHome, 
+  .live-now .clubHome,
   .live-now .clubAway {
     text-align: center;
   }
