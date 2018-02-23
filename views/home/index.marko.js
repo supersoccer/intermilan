@@ -9,7 +9,9 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     marko_loadTemplate = require("marko/src/runtime/helper-loadTemplate"),
     layout_template = marko_loadTemplate(require.resolve("./../layout.marko")),
     marko_helpers = require("marko/src/runtime/html/helpers"),
+    marko_forEach = marko_helpers.f,
     marko_escapeXmlAttr = marko_helpers.xa,
+    marko_escapeXml = marko_helpers.x,
     hasRenderBodyKey = Symbol.for("hasRenderBody"),
     marko_merge = require("marko/src/runtime/helper-merge"),
     marko_loadTag = marko_helpers.t,
@@ -23,37 +25,117 @@ function render(input, out, __component, component, state) {
       _arg: marko_merge({
           body: {
               renderBody: function renderBody(out) {
-                out.w("<div class=\"content\"><div class=\"content-area\"><div class=\"ui banner-slide\"><div class=\"flexslider\"><ul class=\"slides\"><li><div class=\"micro-video-container\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\"><div class=\"thumbOverlay\"></div></div><div class=\"recordStatus\">Replay</div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div><div class=\"titleArea\"><div class=\"leagueName\">Serie A</div><div class=\"matchInfo\"><div class=\"clubName\">Inter Milan <span>VS</span> Udinese</div><div class=\"matchScore\">1 <span>-</span> 3</div></div></div><a href=\"\"></a></div></li><li><div class=\"micro-video-container\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\"><div class=\"thumbOverlay\"></div></div><div class=\"recordStatus\">Replay</div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div><div class=\"titleArea\"><div class=\"leagueName\">Serie A</div><div class=\"matchInfo\"><div class=\"clubName\">Inter Milan <span>VS</span> Udinese</div><div class=\"matchScore\">1 <span>-</span> 3</div></div></div><a href=\"\"></a></div></li><li><div class=\"micro-video-container\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\"><div class=\"thumbOverlay\"></div></div><div class=\"recordStatus\">Replay</div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div><div class=\"titleArea\"><div class=\"leagueName\">Serie A</div><div class=\"matchInfo\"><div class=\"clubName\">Inter Milan <span>VS</span> Udinese</div><div class=\"matchScore\">1 <span>-</span> 3</div></div></div><a href=\"\"></a></div></li></ul></div></div><div class=\"ui container\"><div class=\"welcome-message\"><h1>Official Partner Page</h1><p>Ikuti semua update terbaru dari Inter Milan mulai dari jadwal, siaran ulang pertandingan sampai wawancara bersama pemain-pemain Inter Milan!</p></div><div class=\"video-wrapper\"><div class=\"ui grid\"><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container official\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\"><div class=\"matchInfo\"><div class=\"clubName\">Fiorentina <span>VS</span> Inter</div><div class=\"recordStatus\">Highlights</div></div></div><a href=\"\"></a></div></div><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container official\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\"><div class=\"matchInfo\"><div class=\"clubName\">Fiorentina <span>VS</span> Inter</div><div class=\"recordStatus\">Highlights</div></div></div><a href=\"\"></a></div></div><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container official\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\"><div class=\"matchInfo\"><div class=\"clubName\">Fiorentina <span>VS</span> Inter</div><div class=\"recordStatus\">Highlights</div></div></div><a href=\"\"></a></div></div><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container official\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\"><div class=\"matchInfo\"><div class=\"clubName\">Fiorentina <span>VS</span> Inter</div><div class=\"recordStatus\">Highlights</div></div></div><a href=\"\"></a></div></div></div></div></div><div class=\"live-match-info\"><div class=\"live-now\"><div class=\"ui container\"><h1>Live This Week</h1><div class=\"ui grid\"><div class=\"sixteen wide mobile seven wide computer column\"><div class=\"clubHome\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/inter-logo.png\" alt=\"\" class=\"ui mini image\"> Inter</div></div><div class=\"sixteen wide mobile two wide computer column\"><div class=\"versusSym\"><div>VS</div></div></div><div class=\"sixteen wide mobile seven wide computer column\"><div class=\"clubAway\">Roma <img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/roma-logo.png\" alt=\"\" class=\"ui mini image\"></div></div></div></div></div></div><div class=\"ui container\"><div class=\"ui two column centered grid\"><div class=\"fourteen wide mobile ten wide computer column\"><div class=\"scheduledBox\"><h1>Schedule This Season</h1><div class=\"monthCalendar\"><div class=\"year\">2018</div><div class=\"month\"><div class=\"arrow prev\"><a href=\"\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/arrowprev.png\" alt=\"\"></a></div><div class=\"monthContent\"><div class=\"monthName\">February</div></div><div class=\"arrow next\"><a href=\"\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/arrownext.png\" alt=\"\"></a></div></div><div class=\"date-wrapper\"><div class=\"date\"><div class=\"datedaytime\"><div class=\"dateday\"><span>Sun</span> 04</div> | <div class=\"time\">02.45 <sup>WIB</sup></div></div><div class=\"clubName\">Inter <span>vs</span> Crotone</div></div><div class=\"date\"><div class=\"datedaytime\"><div class=\"dateday\"><span>Sun</span> 04</div> | <div class=\"time\">02.45 <sup>WIB</sup></div></div><div class=\"clubName\">Inter <span>vs</span> Crotone</div></div><div class=\"date\"><div class=\"datedaytime\"><div class=\"dateday\"><span>Sun</span> 04</div> | <div class=\"time\">02.45 <sup>WIB</sup></div></div><div class=\"clubName\">Inter <span>vs</span> Crotone</div></div><div class=\"date\"><div class=\"datedaytime\"><div class=\"dateday\"><span>Sun</span> 04</div> | <div class=\"time\">02.45 <sup>WIB</sup></div></div><div class=\"clubName\">Inter <span>vs</span> Crotone</div></div><div class=\"date\"><div class=\"datedaytime\"><div class=\"dateday\"><span>Sun</span> 04</div> | <div class=\"time\">02.45 <sup>WIB</sup></div></div><div class=\"clubName\">Inter <span>vs</span> Crotone</div></div></div></div></div></div></div></div><div class=\"ui container\"><div class=\"welcome-message\"><h1>Interviews</h1></div><div class=\"video-wrapper\"><div class=\"ui grid\"><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container interviews\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\">Interview: Matrix Impact</div><a href=\"\"></a></div></div><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container interviews\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\">Interview: Matrix Impact</div><a href=\"\"></a></div></div><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container interviews\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\">Interview: Matrix Impact</div><a href=\"\"></a></div></div><div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container interviews\"><div class=\"thumbImg\"><img src=\"http://e0.365dm.com/16/03/16-9/20/danilo-dambrosio-inter-milan_3430481.jpg?20160312224248\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
-                  marko_escapeXmlAttr(out.global.app.staticUrl) +
-                  "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\">Interview: Matrix Impact</div><a href=\"\"></a></div></div></div></div></div></div></div>");
+                out.w("<div class=\"content\"><div class=\"content-area\"><div class=\"ui banner-slide\"><div class=\"flexslider\"><ul class=\"slides\">");
+
+                marko_forEach(data.data.enable.id1, function(head) {
+                  out.w("<li><div class=\"micro-video-container\"><div class=\"thumbImg\"><img src=\"" +
+                    marko_escapeXmlAttr(head.attributes.imageUrl) +
+                    "\" alt=\"\"><div class=\"thumbOverlay\"></div></div><div class=\"recordStatus\">" +
+                    marko_escapeXml(head.attributes.title) +
+                    "</div><div class=\"micro-video-play\"><img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/play.png\" alt=\"\"></div><div class=\"titleArea\"><div class=\"leagueName\">" +
+                    marko_escapeXml(head.attributes.leagueName) +
+                    "</div><div class=\"matchInfo\"><div class=\"clubName\">" +
+                    marko_escapeXml(head.attributes.clubNameHome) +
+                    " <span>VS</span> " +
+                    marko_escapeXml(head.attributes.clubNameAway) +
+                    "</div><div class=\"matchScore\">" +
+                    marko_escapeXml(head.attributes.matchScoreHome) +
+                    " <span>-</span> " +
+                    marko_escapeXml(head.attributes.matchScoreAway) +
+                    "</div></div></div><a href=\"\"></a></div></li>");
+                });
+
+                out.w("</ul></div></div><div class=\"ui container\"><div class=\"welcome-message\">");
+
+                marko_forEach(data.data.enable.id2, function(body) {
+                  out.w("<h1>" +
+                    marko_escapeXml(body.attributes.title) +
+                    "</h1><p>" +
+                    marko_escapeXml(body.attributes.description) +
+                    "</p>");
+                });
+
+                out.w("</div><div class=\"video-wrapper\"><div class=\"ui grid\">");
+
+                marko_forEach(data.data.enable.id3, function(highlights) {
+                  out.w("<div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container official\"><div class=\"thumbImg\"><img src=\"" +
+                    marko_escapeXmlAttr(highlights.attributes.imageUrl) +
+                    "\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\"><div class=\"matchInfo\"><div class=\"clubName\">" +
+                    marko_escapeXml(highlights.attributes.clubHome) +
+                    " <span>VS</span> " +
+                    marko_escapeXml(highlights.attributes.clubAway) +
+                    "</div><div class=\"recordStatus\">" +
+                    marko_escapeXml(highlights.attributes.recordStatus) +
+                    "</div></div></div><a href=\"\"></a></div></div>");
+                });
+
+                out.w("</div></div></div><div class=\"live-match-info\"><div class=\"live-now\"><div class=\"ui container\">");
+
+                marko_forEach(data.data.enable.id4, function(week) {
+                  out.w("<h1>" +
+                    marko_escapeXml(week.attributes.title) +
+                    "</h1><div class=\"ui grid\"><div class=\"sixteen wide mobile seven wide computer column\"><div class=\"clubHome\"><img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/inter-logo.png\" alt=\"\" class=\"ui mini image\"> " +
+                    marko_escapeXml(week.attributes.clubHome) +
+                    "</div></div><div class=\"sixteen wide mobile two wide computer column\"><div class=\"versusSym\"><div>VS</div></div></div><div class=\"sixteen wide mobile seven wide computer column\"><div class=\"clubAway\">" +
+                    marko_escapeXml(week.attributes.clubAway) +
+                    " <img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/roma-logo.png\" alt=\"\" class=\"ui mini image\"></div></div></div>");
+                });
+
+                out.w("</div></div></div><div class=\"ui container\"><div class=\"ui two column centered grid\"><div class=\"fourteen wide mobile ten wide computer column\"><div class=\"scheduledBox\">");
+
+                marko_forEach(data.data.id5, function(season) {
+                  out.w("<h1>" +
+                    marko_escapeXml(season.attributes.title) +
+                    "</h1><div class=\"monthCalendar\"><div class=\"year\">" +
+                    marko_escapeXml(season.attributes.year) +
+                    "</div><div class=\"month\"><div class=\"arrow prev\"><a href=\"\"><img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/arrowprev.png\" alt=\"\"></a></div><div class=\"monthContent\"><div class=\"monthName\">" +
+                    marko_escapeXml(season.attributes.month) +
+                    "</div></div><div class=\"arrow next\"><a href=\"\"><img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/arrownext.png\" alt=\"\"></a></div></div><div class=\"date-wrapper\">");
+
+                  marko_forEach(season.scheduleDetail, function(details) {
+                    out.w("<div class=\"date\"><div class=\"datedaytime\"><div class=\"dateday\"><span>" +
+                      marko_escapeXml(details.attributes.day) +
+                      " </span>" +
+                      marko_escapeXml(details.attributes.date) +
+                      "</div> | <div class=\"time\">" +
+                      marko_escapeXml(details.attributes.time) +
+                      " <sup>" +
+                      marko_escapeXml(details.attributes.timeloc) +
+                      "</sup></div></div><div class=\"clubName\">" +
+                      marko_escapeXml(details.attributes.clubHome) +
+                      " <span>vs</span> " +
+                      marko_escapeXml(details.attributes.clubAway) +
+                      "</div></div>");
+                  });
+
+                  out.w("</div></div>");
+                });
+
+                out.w("</div></div></div></div><div class=\"ui container\"><div class=\"welcome-message\"><h1>Interviews</h1></div><div class=\"video-wrapper\"><div class=\"ui grid\">");
+
+                marko_forEach(data.data.enable.id7, function(interviews) {
+                  out.w("<div class=\"sixteen wide mobile eight wide tablet four wide computer column\"><div class=\"micro-video-container interviews\"><div class=\"thumbImg\"><img src=\"" +
+                    marko_escapeXmlAttr(interviews.attributes.imageUrl) +
+                    "\" alt=\"\" class=\"ui image fluid\"><div class=\"thumbOverlay\"></div><div class=\"micro-video-play\"><img src=\"" +
+                    marko_escapeXmlAttr(out.global.app.staticUrl) +
+                    "/img/play.png\" alt=\"\"></div></div><div class=\"titleArea\">" +
+                    marko_escapeXml(interviews.attributes.title) +
+                    "</div><a href=\"\"></a></div></div>");
+                });
+
+                out.w("</div></div></div></div></div>");
               }
             },
           tail: {

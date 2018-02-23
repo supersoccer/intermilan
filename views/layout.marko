@@ -19,11 +19,15 @@
     <div class="mobile-head navigation">
   		<div class="ui container">
   			<div class="ui equal width grid">
-  				<div class="left aligned column nav-has-icon">
-  					<a href="#" class="burger-access"><i class="ssicon-burger"></i></a>
-  				</div>
+  				<div class="left aligned align-left column">
+  					<!-- <a href="#" class="burger-access"><i class="ssicon-burger"></i></a> -->
+            <div id="main">
+              <span style="color:#818181;font-size:34px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  				  </div>
+          </div>
   				<div class="center aligned align-center column">
-  					<a href=""><img src="https://cdn01.supersoccer.tv/ms/promo/public/img/sstv-logo-small.png" alt="" class="ui image"></a>
+  					<!-- <a href=""><img src="https://cdn01.supersoccer.tv/ms/promo/public/img/sstv-logo-small.png" alt="" class="ui image"></a> -->
+            <a href=""><img src="${out.global.app.staticUrl}/img/inter-hd-logo.png" width="50" height="50" alt="" class="ui image"></a>
   				</div>
   				<div class="right aligned column nav-has-icon">
   					<a href=""><i class="ssicon-search"></i></a>
@@ -32,10 +36,9 @@
   		</div>
   	</div>
   	<!-- Add class open right after burger-menu class to open this -->
-  	<div class="mobile-head burger-menu">
-  		<div class="burger-content">
-  			<a href="#" class="burger-close"><i class="ssicon-close"></i></a>
-  			<ul class="burger-topping">
+  		<div id="mySidenav" class="sidenav">
+  			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; <i class="ssicon-closebtn"></i></a>
+
   				<li><a href="">Channels</a></li>
   				<li><a href="">Shows</a></li>
   				<li><a href="">Live/Replay</a></li>
@@ -45,9 +48,8 @@
   				<li class="separator"></li>
   				<li class="alternate"><a href="">Login</a></li>
   				<li class="alternate"><a href="">Register</a></li>
-  			</ul>
+
   		</div>
-  	</div>
       <include(input.body)/>
       <footer>
     		<p>&copy; 2018 Super Soccer TV</p>
@@ -71,14 +73,21 @@
   				animation: "slide",
   			});
   		});
-  		$('.burger-access').click(function(){
-  			$('.burger-menu').addClass('open');
-  		})
-  		$('.burger-close').click(function() {
-  			$('.burger-menu.open').removeClass('open');
-  		})
 
   	</script>
+    <script>
+      function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+          document.body.style.backgroundColor = "white";
+      }
+    </script>
   	<script src="${out.global.app.staticUrl}/js/jquery.easing.js"></script>
   	<script src="${out.global.app.staticUrl}/js/jquery.mousewheel.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
