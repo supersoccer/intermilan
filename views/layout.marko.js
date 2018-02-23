@@ -37,17 +37,19 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<div class=\"mobile-head navigation\"><div class=\"ui container\"><div class=\"ui equal width grid\"><div class=\"left aligned column nav-has-icon\"><a href=\"#\" class=\"burger-access\"><i class=\"ssicon-burger\"></i></a></div><div class=\"center aligned align-center column\"><a href=\"\"><img src=\"https://cdn01.supersoccer.tv/ms/promo/public/img/sstv-logo-small.png\" alt=\"\" class=\"ui image\"></a></div><div class=\"right aligned column nav-has-icon\"><a href=\"\"><i class=\"ssicon-search\"></i></a></div></div></div></div><div class=\"mobile-head burger-menu\"><div class=\"burger-content\"><a href=\"#\" class=\"burger-close\"><i class=\"ssicon-close\"></i></a><ul class=\"burger-topping\"><li><a href=\"\">Channels</a></li><li><a href=\"\">Shows</a></li><li><a href=\"\">Live/Replay</a></li><li><a href=\"\">News</a></li><li><a href=\"\">Buy Package</a></li><li><a href=\"\">Help</a></li><li class=\"separator\"></li><li class=\"alternate\"><a href=\"\">Login</a></li><li class=\"alternate\"><a href=\"\">Register</a></li></ul></div></div>");
+  out.w("<div class=\"mobile-head navigation\"><div class=\"ui container\"><div class=\"ui equal width grid\"><div class=\"left aligned align-left column\"><div id=\"main\"><span style=\"color:#818181;font-size:34px;cursor:pointer\" onclick=\"openNav()\">&#9776;</span></div></div><div class=\"center aligned align-center column\"><a href=\"\"><img src=\"" +
+    marko_escapeXmlAttr(out.global.app.staticUrl) +
+    "/img/inter-hd-logo.png\" width=\"50\" height=\"50\" alt=\"\" class=\"ui image\"></a></div><div class=\"right aligned column nav-has-icon\"><a href=\"\"><i class=\"ssicon-search\"></i></a></div></div></div></div><div id=\"mySidenav\" class=\"sidenav\"><a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times; <i class=\"ssicon-closebtn\"></i></a><li><a href=\"\">Channels</a></li><li><a href=\"\">Shows</a></li><li><a href=\"\">Live/Replay</a></li><li><a href=\"\">News</a></li><li><a href=\"\">Buy Package</a></li><li><a href=\"\">Help</a></li><li class=\"separator\"></li><li class=\"alternate\"><a href=\"\">Login</a></li><li class=\"alternate\"><a href=\"\">Register</a></li></div>");
 
   include_tag({
       _target: input.body
-    }, out, __component, "44");
+    }, out, __component, "42");
 
   out.w("<footer><p>&copy; 2018 Super Soccer TV</p></footer><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"></script><script src=\"" +
     marko_escapeXmlAttr(out.global.app.staticUrl) +
     "/js/semantic.min.js\"></script><script>\n  \t\t$('.ui.dropdown')\n  \t\t\t.dropdown()\n        ;\n  \t</script><script src=\"" +
     marko_escapeXmlAttr(out.global.app.staticUrl) +
-    "/js/jquery.flexslider.js\"></script><script>\n  \t\t$(window).load(function() {\n  \t\t\t$('.flexslider').flexslider({\n  \t\t\t\tanimation: \"slide\",\n  \t\t\t});\n  \t\t});\n  \t\t$('.burger-access').click(function(){\n  \t\t\t$('.burger-menu').addClass('open');\n  \t\t})\n  \t\t$('.burger-close').click(function() {\n  \t\t\t$('.burger-menu.open').removeClass('open');\n  \t\t})\n\n  \t</script><script src=\"" +
+    "/js/jquery.flexslider.js\"></script><script>\n  \t\t$(window).load(function() {\n  \t\t\t$('.flexslider').flexslider({\n  \t\t\t\tanimation: \"slide\",\n  \t\t\t});\n  \t\t});\n\n  \t</script><script>\n      function openNav() {\n          document.getElementById(\"mySidenav\").style.width = \"250px\";\n          document.getElementById(\"main\").style.marginLeft = \"250px\";\n          document.body.style.backgroundColor = \"rgba(0,0,0,0.4)\";\n      }\n\n      function closeNav() {\n          document.getElementById(\"mySidenav\").style.width = \"0\";\n          document.getElementById(\"main\").style.marginLeft= \"0\";\n          document.body.style.backgroundColor = \"white\";\n      }\n    </script><script src=\"" +
     marko_escapeXmlAttr(out.global.app.staticUrl) +
     "/js/jquery.easing.js\"></script><script src=\"" +
     marko_escapeXmlAttr(out.global.app.staticUrl) +
@@ -59,11 +61,11 @@ function render(input, out, __component, component, state) {
 
   include_tag({
       _target: input.tail
-    }, out, __component, "55");
+    }, out, __component, "54");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "56");
+  await_reorderer_tag({}, out, __component, "55");
 
   out.w("</body></html>");
 }

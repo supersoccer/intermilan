@@ -2,7 +2,7 @@ const moment = require('moment');
 const path = require('path');
 
 const APPNAME = 'AppName';
-const PORT = 3000;
+const PORT = 3030;
 
 module.exports = {
   /**
@@ -11,9 +11,9 @@ module.exports = {
   app: {
     name: `App.${APPNAME}`,
     port: PORT,
-    hostname: `http://localhost:${PORT}`,
+    hostname: `http://briyan.local`,
     assetsVersion: moment().format('X'),
-    staticUrl: `http://localhost:${PORT}/assets`
+    staticUrl: `http://briyan.local/assets`
   },
 
   /**
