@@ -2,6 +2,7 @@ const $ = require('config');
 const request = require('request-promise');
 const JSONApi = require('node-jsonapi');
 const API = new JSONApi();
+const lodash = require('lodash');
 const indexTpl = require($.alias.views + '/home/index');
 
 class Home {
@@ -13,6 +14,25 @@ class Home {
     // Data processing here
 
   var list;
+  var currentMonth = 0;
+
+  if (req.query.month){
+    currentMonth = parseInt(req.query.month);
+  }
+  if (req.query.nextorprev){
+    if (req.query.nextorprev === "next"){
+      currentMonth = currentMonth + 1;
+      if (currentMonth > 2){
+        currentMonth = 0;
+      }
+    }
+    else if (req.query.nextorprev === "prev"){
+      currentMonth = currentMonth - 1;
+      if (currentMonth < 0){
+        currentMonth = 0;
+      }
+    }
+  }
 
     function getData(link, cond){
         return request({
@@ -70,16 +90,16 @@ class Home {
           }
       }
 
-      for (var i = 0; i < list.data[9].schedule.length; i++) {
-        if (list.data[9].schedule[i].attributes.enabled) {
-          id5.push(list.data[9].schedule[i]);
-        }
+      if (list.data[9].schedule[currentMonth].attributes.enabled) {
+        id5.push(list.data[9].schedule[currentMonth]);
       }
 
       const category = {
       };
 
       // console.log(enable);
+
+
 
       res.marko(indexTpl, {
         title: 'Inter Milan',
@@ -92,6 +112,7 @@ class Home {
           id5: id5,
           id6: id6,
           id7: id7,
+          currentMonth: currentMonth,
         },
       });
     })

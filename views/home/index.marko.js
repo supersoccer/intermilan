@@ -96,11 +96,19 @@ function render(input, out, __component, component, state) {
                     marko_escapeXml(season.attributes.title) +
                     "</h1><div class=\"monthCalendar\"><div class=\"year\">" +
                     marko_escapeXml(season.attributes.year) +
-                    "</div><div class=\"month\"><div class=\"arrow prev\"><a href=\"\"><img src=\"" +
+                    "</div><div class=\"month\"><div class=\"arrow prev\"><a href=\"" +
+                    marko_escapeXmlAttr(out.global.app.hostname) +
+                    "/?month=" +
+                    marko_escapeXmlAttr(data.data.currentMonth) +
+                    "&amp;nextorprev=prev\"><img src=\"" +
                     marko_escapeXmlAttr(out.global.app.staticUrl) +
                     "/img/arrowprev.png\" alt=\"\"></a></div><div class=\"monthContent\"><div class=\"monthName\">" +
                     marko_escapeXml(season.attributes.month) +
-                    "</div></div><div class=\"arrow next\"><a href=\"\"><img src=\"" +
+                    "</div></div><div class=\"arrow next\"><a href=\"" +
+                    marko_escapeXmlAttr(out.global.app.hostname) +
+                    "/?month=" +
+                    marko_escapeXmlAttr(data.data.currentMonth) +
+                    "&amp;nextorprev=next\"><img src=\"" +
                     marko_escapeXmlAttr(out.global.app.staticUrl) +
                     "/img/arrownext.png\" alt=\"\"></a></div></div><div class=\"date-wrapper\">");
 
